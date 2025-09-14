@@ -1,0 +1,285 @@
+{
+  "name": "Telegram Revenue Copilot - N8N Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "telegram-bot-trigger",
+      "name": "Telegram Bot Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "telegram-revenue-copilot",
+      "credentials": {
+        "telegramApi": {
+          "id": "telegram-bot-credentials",
+          "name": "Telegram Bot API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "// Intent Classification Engine\nconst message = items[0].json.message.text.toLowerCase();\nconst userId = items[0].json.message.from.id;\nconst userName = items[0].json.message.from.first_name;\n\n// Intent patterns\nconst intents = {\n  knowledge_qa: /\\b(what|how|why|when|where|explain|tell me about|describe|\\?)\\b/,\n  lead_capture: /\\b(interested|want|need|looking for|contact|phone|email|demo|meeting)\\b/,\n  proposal_request: /\\b(proposal|quote|pricing|cost|price|estimate|budget|package)\\b/,\n  next_step: /\\b(next|follow up|schedule|book|arrange|meeting|call|appointment)\\b/,\n  status_update: /\\b(status|update|progress|check|following up|timeline|deadline)\\b/,\n  smalltalk: /\\b(hello|hi|hey|good|thanks|thank you|bye|goodbye)\\b/\n};\n\n// Classify intent\nlet detectedIntent = 'smalltalk';\nfor (const [intent, pattern] of Object.entries(intents)) {\n  if (pattern.test(message)) {\n    detectedIntent = intent;\n    break;\n  }\n}\n\n// Extract entities\nconst emailMatch = message.match(/\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Z|a-z]{2,}\\b/);\nconst phoneMatch = message.match(/\\b\\d{3}[-.]?\\d{3}[-.]?\\d{4}\\b/);\nconst nameMatch = message.match(/my name is\\s+([A-Za-z\\s]+)/);\n\nreturn [{\n  json: {\n    userId: userId,\n    userName: userName,\n    message: message,\n    intent: detectedIntent,\n    entities: {\n      email: emailMatch ? emailMatch[0] : null,\n      phone: phoneMatch ? phoneMatch[0] : null,\n      name: nameMatch ? nameMatch[1] : null\n    },\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "intent-classifier",
+      "name": "Intent Classifier",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.intent}}",
+              "operation": "equal",
+              "value2": "knowledge_qa"
+            }
+          ]
+        }
+      },
+      "id": "knowledge-agent-filter",
+      "name": "Knowledge Agent Filter",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [680, 200]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.intent}}",
+              "operation": "equal",
+              "value2": "lead_capture"
+            }
+          ]
+        }
+      },
+      "id": "dealflow-agent-filter",
+      "name": "Dealflow Agent Filter", 
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [680, 400]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Knowledge Agent Response Generator\nconst intent = items[0].json.intent;\nconst message = items[0].json.message;\n\nlet response = '';\n\nif (intent === 'knowledge_qa') {\n  response = `I'm your Revenue Copilot! I can help you with:\n\nBUSINESS GROWTH:\n• Lead generation strategies\n• Sales funnel optimization  \n• Revenue stream analysis\n• Market research insights\n\nAUTOMATION SOLUTIONS:\n• N8N workflow automation\n• CRM integration\n• Email marketing automation\n• Social media management\n\nREVENUE OPTIMIZATION:\n• Pricing strategy analysis\n• Customer lifetime value\n• Conversion rate optimization\n• Performance tracking\n\nWhat specific area would you like to explore?`;\n} else if (intent === 'smalltalk') {\n  response = `Hello! I'm your AI Revenue Copilot, ready to help you grow your business!\n\nI can assist with:\n✓ Lead generation and qualification\n✓ Sales process automation\n✓ Revenue optimization strategies\n✓ Business intelligence insights\n\nHow can I help you increase your revenue today?`;\n} else {\n  response = \"I'm here to help with your business growth questions. What would you like to know?\";\n}\n\nreturn [{\n  json: {\n    ...items[0].json,\n    response: response,\n    agent: 'knowledge'\n  }\n}];"
+      },
+      "id": "knowledge-agent-response",
+      "name": "Knowledge Agent Response",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [900, 200]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Dealflow Agent Response Generator\nconst intent = items[0].json.intent;\nconst entities = items[0].json.entities;\n\nlet response = '';\n\nswitch(intent) {\n  case 'lead_capture':\n    response = `Great! I'd love to help you with our services.\n\nTo provide the best solution, I need a few details:\n\n📋 QUICK QUALIFICATION:\n• What's your current monthly revenue goal?\n• Which area needs the most improvement?\n• What's your timeline for implementation?\n\nYou can also share your contact details and I'll have our team reach out with a customized strategy.\n\nReady to accelerate your growth?`;\n    break;\n    \n  case 'proposal_request':\n    response = `Excellent! Let me prepare a customized proposal for you.\n\n🎯 OUR REVENUE ACCELERATION PACKAGES:\n\nSTARTER PACKAGE ($2,997):\n• Automated lead generation setup\n• CRM integration & optimization\n• 30-day revenue tracking\n\nGROWTH PACKAGE ($4,997):\n• Everything in Starter\n• Sales funnel automation\n• Advanced analytics dashboard\n• 60-day implementation\n\nENTERPRISE ($9,997):\n• Complete revenue system\n• Multi-channel automation\n• Dedicated success manager\n• 90-day transformation guarantee\n\nWhich package aligns with your goals?`;\n    break;\n    \n  case 'next_step':\n    response = `Perfect! Let's schedule your Revenue Strategy Session.\n\n🗓️ AVAILABLE TIMES:\n• Tomorrow 2-4 PM EST\n• This week 10 AM - 6 PM EST\n• Weekend slots available\n\nDuring this 30-minute session, we'll:\n✓ Analyze your current revenue streams\n✓ Identify growth opportunities\n✓ Design your custom automation strategy\n✓ Provide immediate actionable insights\n\nWhat time works best for you?`;\n    break;\n    \n  case 'status_update':\n    response = `Here's your current status update:\n\n📊 PROGRESS TRACKING:\n• Lead generation: Active\n• Automation setup: In progress\n• CRM integration: Completed\n• Revenue tracking: Live\n\n📈 RECENT METRICS:\n• New leads this week: Processing\n• Conversion improvements: Analyzing\n• Revenue impact: Calculating\n\nWould you like a detailed performance report?`;\n    break;\n    \n  default:\n    response = \"I'm here to help move your business forward. What's your next priority?\";\n}\n\nreturn [{\n  json: {\n    ...items[0].json,\n    response: response,\n    agent: 'dealflow'\n  }\n}];"
+      },
+      "id": "dealflow-agent-response",
+      "name": "Dealflow Agent Response", 
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [900, 400]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "={{$json.userId}}",
+        "text": "={{$json.response}}"
+      },
+      "id": "telegram-send-response",
+      "name": "Send Telegram Response",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [1120, 300],
+      "credentials": {
+        "telegramApi": {
+          "id": "telegram-bot-credentials", 
+          "name": "Telegram Bot API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "table": "conversations",
+        "columns": "user_id, username, first_name, message, intent, response, timestamp",
+        "additionalFields": {}
+      },
+      "id": "save-conversation",
+      "name": "Save to Database",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [1340, 300],
+      "credentials": {
+        "postgres": {
+          "id": "database-credentials",
+          "name": "Revenue Copilot DB"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.entities.email}}",
+              "operation": "isNotEmpty"
+            }
+          ]
+        }
+      },
+      "id": "lead-capture-filter",
+      "name": "Lead Capture Filter",
+      "type": "n8n-nodes-base.if", 
+      "typeVersion": 1,
+      "position": [1560, 300]
+    },
+    {
+      "parameters": {
+        "operation": "insert",
+        "table": "crm_leads",
+        "columns": "user_id, name, contact_info, intent, stage, notes",
+        "additionalFields": {}
+      },
+      "id": "save-lead",
+      "name": "Save Lead to CRM",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 1,
+      "position": [1780, 300],
+      "credentials": {
+        "postgres": {
+          "id": "database-credentials",
+          "name": "Revenue Copilot DB"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Telegram Bot Trigger": {
+      "main": [
+        [
+          {
+            "node": "Intent Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Intent Classifier": {
+      "main": [
+        [
+          {
+            "node": "Knowledge Agent Filter",
+            "type": "main", 
+            "index": 0
+          },
+          {
+            "node": "Dealflow Agent Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Knowledge Agent Filter": {
+      "main": [
+        [
+          {
+            "node": "Knowledge Agent Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dealflow Agent Filter": {
+      "main": [
+        [
+          {
+            "node": "Dealflow Agent Response", 
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Knowledge Agent Response": {
+      "main": [
+        [
+          {
+            "node": "Send Telegram Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Dealflow Agent Response": {
+      "main": [
+        [
+          {
+            "node": "Send Telegram Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Telegram Response": {
+      "main": [
+        [
+          {
+            "node": "Save to Database",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save to Database": {
+      "main": [
+        [
+          {
+            "node": "Lead Capture Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead Capture Filter": {
+      "main": [
+        [
+          {
+            "node": "Save Lead to CRM",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2024-01-15T00:00:00.000Z",
+  "updatedAt": "2024-01-15T00:00:00.000Z",
+  "settings": {},
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2024-01-15T00:00:00.000Z",
+      "updatedAt": "2024-01-15T00:00:00.000Z",
+      "id": "revenue-automation",
+      "name": "Revenue Automation"
+    }
+  ],
+  "triggerCount": 0,
+  "versionId": "1"
+}

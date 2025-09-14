@@ -1,0 +1,270 @@
+{
+  "name": "Telegram Revenue Copilot - Main Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "telegram-webhook",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-telegram",
+      "name": "Telegram Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "message-exists",
+              "leftValue": "={{ $json.message }}",
+              "rightValue": "",
+              "operator": {
+                "type": "object",
+                "operation": "exists"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "filter-messages",
+      "name": "Filter Messages",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract message data\nconst update = $input.first().json;\nconst message = update.message;\n\nif (!message || !message.text) {\n  return [{\n    json: {\n      error: \"No message text found\",\n      skip: true\n    }\n  }];\n}\n\n// Classify intent using advanced patterns\nfunction classifyIntent(text) {\n  const patterns = {\n    greeting: /\\b(hi|hello|hey|start|good\\s+(morning|afternoon|evening))\\b/i,\n    demo_request: /\\b(demo|demonstration|show|see\\s+platform|trial)\\b/i,\n    pricing_inquiry: /\\b(price|pricing|cost|how\\s+much|plans|subscription)\\b/i,\n    feature_question: /\\b(features|capabilities|what\\s+can|functionality)\\b/i,\n    support_request: /\\b(help|support|problem|issue|trouble)\\b/i,\n    lead_info: /\\b(contact|email|phone|reach|business|company)\\b/i,\n    refund_inquiry: /\\b(refund|money\\s+back|return|cancel|guarantee)\\b/i,\n    booking: /\\b(book|schedule|appointment|meeting|call)\\b/i\n  };\n  \n  for (const [intent, pattern] of Object.entries(patterns)) {\n    if (pattern.test(text)) {\n      return intent;\n    }\n  }\n  \n  return 'general_inquiry';\n}\n\nconst intent = classifyIntent(message.text);\n\nreturn [{\n  json: {\n    chat_id: message.chat.id,\n    user_id: message.from.id,\n    username: message.from.username || 'Unknown',\n    message_text: message.text,\n    intent: intent,\n    timestamp: new Date().toISOString(),\n    message_id: message.message_id\n  }\n}];"
+      },
+      "id": "process-message",
+      "name": "Process Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        680,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "intent-check",
+              "leftValue": "={{ $json.intent }}",
+              "rightValue": "greeting",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      },
+      "id": "route-intent",
+      "name": "Route Intent",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        900,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Generate smart responses based on intent\nconst data = $input.first().json;\nconst intent = data.intent;\n\nconst responses = {\n  greeting: {\n    text: `🚀 <b>Welcome to Revenue Copilot!</b>\\n\\nI'm your AI-powered business growth assistant.\\n\\n<b>🎯 How can I help you today?</b>\\n\\nChoose an option below or ask me anything!`,\n    keyboard: {\n      inline_keyboard: [\n        [{text: \"💰 Revenue Solutions\", callback_data: \"revenue\"}, {text: \"🎯 Book Free Demo\", callback_data: \"demo\"}],\n        [{text: \"📊 Get Proposal\", callback_data: \"proposal\"}, {text: \"❓ Ask Questions\", callback_data: \"questions\"}],\n        [{text: \"🎧 Support\", callback_data: \"support\"}, {text: \"📈 Success Stories\", callback_data: \"stories\"}]\n      ]\n    }\n  },\n  \n  demo_request: {\n    text: `🎯 <b>Book Your Free Demo</b>\\n\\nSee our platform in action!\\n\\n<b>🎬 Ready to see amazing results?</b>\\n\\n<b>Choose your demo type:</b>`,\n    keyboard: {\n      inline_keyboard: [\n        [{text: \"⚡ Quick 15-min Demo\", callback_data: \"demo_quick\"}],\n        [{text: \"🏢 Full Business Demo\", callback_data: \"demo_full\"}],\n        [{text: \"📅 Schedule Custom Time\", callback_data: \"demo_custom\"}],\n        [{text: \"🔙 Back to Main Menu\", callback_data: \"main_menu\"}]\n      ]\n    }\n  },\n  \n  pricing_inquiry: {\n    text: `💰 <b>SPECIAL LAUNCH PRICING!</b>\\n\\n<b>Starter Plan</b> - $99/month\\n✅ Real-time analytics\\n✅ Lead tracking\\n✅ Basic automation\\n\\n<b>Professional Plan</b> - $299/month\\n✅ Everything in Starter\\n✅ Advanced AI insights\\n✅ Custom dashboards\\n\\n<b>Enterprise Plan</b> - $799/month\\n✅ Everything in Professional\\n✅ White-label solution\\n✅ Dedicated success manager\\n\\n<b>🎁 LIMITED OFFER:</b> Use code <code>TELEGRAM50</code> for 50% off!`,\n    keyboard: {\n      inline_keyboard: [\n        [{text: \"🎯 Book Free Demo\", callback_data: \"demo\"}, {text: \"📊 Get Custom Quote\", callback_data: \"quote\"}],\n        [{text: \"💬 Chat with Sales\", callback_data: \"sales\"}, {text: \"🔙 Back to Main Menu\", callback_data: \"main_menu\"}]\n      ]\n    }\n  },\n  \n  support_request: {\n    text: `🎧 <b>24/7 WORLD-CLASS SUPPORT</b>\\n\\n<b>📧 Email Support</b>\\nsupport@renvuee.com\\nResponse time: < 2 hours\\n\\n<b>💬 Live Chat</b>\\nAvailable 24/7 on our website\\n\\n<b>📞 Phone Support</b>\\n+1-855-RENVUEE\\nBusiness hours: 9 AM - 9 PM EST\\n\\n<b>📚 Knowledge Base</b>\\nhelp.renvuee.com\\n500+ articles and tutorials`,\n    keyboard: {\n      inline_keyboard: [\n        [{text: \"💬 Start Live Chat\", callback_data: \"live_chat\"}, {text: \"📧 Email Support\", callback_data: \"email_support\"}],\n        [{text: \"📚 Knowledge Base\", callback_data: \"knowledge\"}, {text: \"🔙 Back to Main Menu\", callback_data: \"main_menu\"}]\n      ]\n    }\n  },\n  \n  general_inquiry: {\n    text: `🤖 <b>I'm here to help!</b>\\n\\nI can assist you with:\\n• 💰 Revenue growth strategies\\n• 🎯 Platform demos and trials\\n• 📊 Custom proposals and quotes\\n• ❓ Answering your questions\\n• 🎧 Technical support\\n\\n<b>Try asking me about:</b>\\n• \"Show me pricing plans\"\\n• \"I want to see a demo\"\\n• \"What features do you offer?\"\\n• \"How can I boost my revenue?\"`,\n    keyboard: {\n      inline_keyboard: [\n        [{text: \"💰 Revenue Solutions\", callback_data: \"revenue\"}, {text: \"🎯 Book Free Demo\", callback_data: \"demo\"}],\n        [{text: \"📊 Get Proposal\", callback_data: \"proposal\"}, {text: \"❓ Ask Questions\", callback_data: \"questions\"}]\n      ]\n    }\n  }\n};\n\nconst response = responses[intent] || responses.general_inquiry;\n\nreturn [{\n  json: {\n    chat_id: data.chat_id,\n    text: response.text,\n    reply_markup: JSON.stringify(response.keyboard),\n    parse_mode: \"HTML\"\n  }\n}];"
+      },
+      "id": "generate-response",
+      "name": "Generate Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1120,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "httpMethod": "POST",
+        "url": "https://api.telegram.org/bot{{ $vars.TELEGRAM_BOT_TOKEN }}/sendMessage",
+        "sendBody": true,
+        "bodyContentType": "json",
+        "jsonBody": "={{ $json }}",
+        "options": {}
+      },
+      "id": "send-telegram-message",
+      "name": "Send Telegram Message",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        1340,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "OK"
+      },
+      "id": "respond-ok",
+      "name": "Respond OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [
+        1560,
+        220
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": "{{ $vars.GOOGLE_SHEET_ID }}",
+        "sheetName": "Analytics",
+        "columnToMatchOn": "timestamp",
+        "valueToMatchOn": "={{ $now }}",
+        "valuesToSend": {
+          "values": {
+            "timestamp": "={{ $now }}",
+            "user_id": "={{ $json.user_id }}",
+            "username": "={{ $json.username }}",
+            "intent": "={{ $json.intent }}",
+            "message": "={{ $json.message_text }}",
+            "response_sent": "true"
+          }
+        },
+        "options": {}
+      },
+      "id": "log-analytics",
+      "name": "Log Analytics",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [
+        1340,
+        400
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Webhook": {
+      "main": [
+        [
+          {
+            "node": "Filter Messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Messages": {
+      "main": [
+        [
+          {
+            "node": "Process Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Message": {
+      "main": [
+        [
+          {
+            "node": "Route Intent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Route Intent": {
+      "main": [
+        [
+          {
+            "node": "Generate Response",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Response": {
+      "main": [
+        [
+          {
+            "node": "Send Telegram Message",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Analytics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Telegram Message": {
+      "main": [
+        [
+          {
+            "node": "Respond OK",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "id": "telegram-revenue-copilot-main",
+  "tags": [
+    {
+      "createdAt": "2025-09-15T00:00:00.000Z",
+      "updatedAt": "2025-09-15T00:00:00.000Z",
+      "id": "telegram",
+      "name": "telegram"
+    },
+    {
+      "createdAt": "2025-09-15T00:00:00.000Z", 
+      "updatedAt": "2025-09-15T00:00:00.000Z",
+      "id": "revenue",
+      "name": "revenue"
+    }
+  ]
+}

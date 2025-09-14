@@ -1,0 +1,74 @@
+{
+  "name": "Lead Capture & CRM Integration",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lead-capture",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-lead",
+      "name": "Lead Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract and validate lead data\nconst data = $input.first().json;\n\n// Validate required fields\nif (!data.user_id || !data.intent) {\n  return [{\n    json: {\n      error: \"Missing required fields\",\n      skip: true\n    }\n  }];\n}\n\n// Extract lead information from message\nfunction extractLeadInfo(text, intent) {\n  const emailPattern = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}/g;\n  const phonePattern = /(?:\\+?1[-. ]?)?(?:\\(?[0-9]{3}\\)?[-. ]?)?[0-9]{3}[-. ]?[0-9]{4}/g;\n  const companyPattern = /(company|business|startup|corporation|llc|inc|ltd)\\s*:?\\s*([^\\n,;]+)/gi;\n  const budgetPattern = /\\$([0-9,]+)|(\\d+)\\s*(k|thousand|million)/gi;\n  \n  const emails = text.match(emailPattern) || [];\n  const phones = text.match(phonePattern) || [];\n  const companies = [];\n  const budgets = [];\n  \n  let match;\n  while ((match = companyPattern.exec(text)) !== null) {\n    companies.push(match[2].trim());\n  }\n  \n  while ((match = budgetPattern.exec(text)) !== null) {\n    budgets.push(match[0]);\n  }\n  \n  return {\n    emails,\n    phones,\n    companies,\n    budgets,\n    hasContactInfo: emails.length > 0 || phones.length > 0,\n    leadScore: calculateLeadScore(intent, emails.length > 0, phones.length > 0, companies.length > 0)\n  };\n}\n\nfunction calculateLeadScore(intent, hasEmail, hasPhone, hasCompany) {\n  let score = 0;\n  \n  // Intent scoring\n  const intentScores = {\n    demo_request: 80,\n    pricing_inquiry: 70,\n    lead_info: 90,\n    booking: 85,\n    feature_question: 60,\n    support_request: 40,\n    general_inquiry: 30\n  };\n  \n  score += intentScores[intent] || 30;\n  \n  // Contact info bonus\n  if (hasEmail) score += 15;\n  if (hasPhone) score += 10;\n  if (hasCompany) score += 5;\n  \n  return Math.min(score, 100);\n}\n\nconst leadInfo = extractLeadInfo(data.message_text || '', data.intent);\n\nreturn [{\n  json: {\n    user_id: data.user_id,\n    username: data.username,\n    chat_id: data.chat_id,\n    intent: data.intent,\n    message: data.message_text,\n    timestamp: new Date().toISOString(),\n    lead_score: leadInfo.leadScore,\n    emails: leadInfo.emails,\n    phones: leadInfo.phones,\n    companies: leadInfo.companies,\n    budgets: leadInfo.budgets,\n    has_contact_info: leadInfo.hasContactInfo,\n    source: \"telegram_bot\",\n    status: \"new\"\n  }\n}];"
+      },
+      "id": "process-lead",
+      "name": "Process Lead",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        460,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "high-quality-lead",
+              "leftValue": "={{ $json.lead_score }}",
+              "rightValue": 70,
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "filter-quality-leads",
+      "name": "Filter Quality Leads",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        680,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": "{{ $vars.GOOGLE_SHEET_ID }}",
+        "sheetName": "Leads",
+        "columnToMatchOn": "user_id",
+        "valueToMatchOn": "={{ $json.user_id }}",
+        "valuesToSend": {
+          "values": {
+            "timestamp": "={{ $json.timestamp }}",\n            "user_id": "={{ $json.user_id }}",\n            "username": "={{ $json.username }}",\n            "intent": "={{ $json.intent }}",\n            "lead_score": "={{ $json.lead_score }}",\n            "emails": "={{ $json.emails.join(', ') }}",\n            "phones": "={{ $json.phones.join(', ') }}",\n            "companies": "={{ $json.companies.join(', ') }}",\n            "message": "={{ $json.message }}",\n            "status": "={{ $json.status }}",\n            "source": "telegram_bot"\n          }\n        },\n        "options": {}\n      },\n      "id": "save-to-crm",\n      "name": "Save to CRM",\n      "type": "n8n-nodes-base.googleSheets",\n      "typeVersion": 4,\n      "position": [\n        900,\n        200\n      ]\n    },\n    {\n      "parameters": {\n        "operation": "sendEmail",\n        "toEmail": "sales@renvuee.com",\n        "subject": "🔥 HIGH-QUALITY LEAD ALERT - Score: {{ $json.lead_score }}",\n        "emailType": "html",\n        "message": "<h2>🎯 New High-Quality Lead!</h2>\\n\\n<p><strong>Lead Score:</strong> {{ $json.lead_score }}/100</p>\\n<p><strong>User:</strong> @{{ $json.username }} (ID: {{ $json.user_id }})</p>\\n<p><strong>Intent:</strong> {{ $json.intent }}</p>\\n<p><strong>Message:</strong> {{ $json.message }}</p>\\n\\n<h3>📞 Contact Information:</h3>\\n<p><strong>Emails:</strong> {{ $json.emails.join(', ') }}</p>\\n<p><strong>Phones:</strong> {{ $json.phones.join(', ') }}</p>\\n<p><strong>Companies:</strong> {{ $json.companies.join(', ') }}</p>\\n\\n<h3>📊 Lead Details:</h3>\\n<p><strong>Source:</strong> Telegram Bot</p>\\n<p><strong>Timestamp:</strong> {{ $json.timestamp }}</p>\\n<p><strong>Status:</strong> {{ $json.status }}</p>\\n\\n<p><em>Follow up immediately for best conversion rates!</em></p>",\n        "options": {}\n      },\n      "id": "alert-sales-team",\n      "name": "Alert Sales Team",\n      "type": "n8n-nodes-base.emailSend",\n      "typeVersion": 2,\n      "position": [\n        900,\n        400\n      ]\n    },\n    {\n      "parameters": {\n        "conditions": {\n          "options": {\n            "leftValue": "",\n            "caseSensitive": true,\n            "typeValidation": "strict"\n          },\n          "conditions": [\n            {\n              "id": "has-contact-info",\n              "leftValue": "={{ $json.has_contact_info }}",\n              "rightValue": true,\n              "operator": {\n                "type": "boolean",\n                "operation": "true"\n              }\n            }\n          ],\n          "combinator": "and"\n        },\n        "options": {}\n      },\n      "id": "check-contact-info",\n      "name": "Check Contact Info",\n      "type": "n8n-nodes-base.if",\n      "typeVersion": 2,\n      "position": [\n        1120,\n        300\n      ]\n    },\n    {\n      "parameters": {\n        "jsCode": "// Generate personalized follow-up message\\nconst data = $input.first().json;\\n\\nconst followUpMessages = {\\n  demo_request: \\\"🎬 Great! I'll have our demo specialist reach out to you within 2 hours to schedule your personalized demo. Get ready to see amazing results!\\\",\\n  pricing_inquiry: \\\"💰 Perfect! Our pricing specialist will contact you shortly with a custom quote based on your needs. Expect significant ROI!\\\",\\n  lead_info: \\\"🎯 Excellent! Our business development team will be in touch within the hour to discuss how we can boost your revenue by 400%+\\\",\\n  booking: \\\"📅 Fantastic! Our scheduling team will reach out immediately to book your preferred time slot. Looking forward to our conversation!\\\",\\n  feature_question: \\\"⭐ Great question! Our product expert will contact you with detailed feature information and a custom demo. You'll love what you see!\\\"\\n};\\n\\nconst message = followUpMessages[data.intent] || \\\"🚀 Thank you for your interest! Our team will be in touch shortly to help you achieve amazing results.\\\";\\n\\nreturn [{\\n  json: {\\n    chat_id: data.chat_id,\\n    text: `<b>🎉 LEAD CAPTURED SUCCESSFULLY!</b>\\\\n\\\\n${message}\\\\n\\\\n<b>📞 What happens next:</b>\\\\n• Personal outreach within 2 hours\\\\n• Custom solution presentation\\\\n• Exclusive pricing offers\\\\n• Dedicated success manager\\\\n\\\\n<b>🎁 Bonus:</b> Mention this conversation for 50% off setup fees!`,\\n    parse_mode: \\\"HTML\\\"\\n  }\\n}];"\n      },\n      "id": "generate-followup",\n      "name": "Generate Follow-up",\n      "type": "n8n-nodes-base.code",\n      "typeVersion": 2,\n      "position": [\n        1340,\n        200\n      ]\n    },\n    {\n      "parameters": {\n        "authentication": "genericCredentialType",\n        "genericAuthType": "httpHeaderAuth",\n        "httpMethod": "POST",\n        "url": "https://api.telegram.org/bot{{ $vars.TELEGRAM_BOT_TOKEN }}/sendMessage",\n        "sendBody": true,\n        "bodyContentType": "json",\n        "jsonBody": "={{ $json }}",\n        "options": {}\n      },\n      "id": "send-followup-message",\n      "name": "Send Follow-up",\n      "type": "n8n-nodes-base.httpRequest",\n      "typeVersion": 4.1,\n      "position": [\n        1560,\n        200\n      ]\n    },\n    {\n      "parameters": {\n        "respondWith": "json",\n        "responseBody": "{ \\\"status\\\": \\\"success\\\", \\\"message\\\": \\\"Lead processed successfully\\\" }"\n      },\n      "id": "respond-success",\n      "name": "Respond Success",\n      "type": "n8n-nodes-base.respondToWebhook",\n      "typeVersion": 1,\n      "position": [\n        1780,\n        300\n      ]\n    }\n  ],\n  "pinData": {},\n  "connections": {\n    "Lead Webhook": {\n      "main": [\n        [\n          {\n            "node": "Process Lead",\n            "type": "main",\n            "index": 0\n          }\n        ]\n      ]\n    },\n    "Process Lead": {\n      "main": [\n        [\n          {\n            "node": "Filter Quality Leads",\n            "type": "main",\n            "index": 0\n          }\n        ]\n      ]\n    },\n    "Filter Quality Leads": {\n      "main": [\n        [\n          {\n            "node": "Save to CRM",\n            "type": "main",\n            "index": 0\n          },\n          {\n            "node": "Alert Sales Team",\n            "type": "main",\n            "index": 0\n          }\n        ]\n      ]\n    },\n    "Save to CRM": {\n      "main": [\n        [\n          {\n            "node": "Check Contact Info",\n            "type": "main",\n            "index": 0\n          }\n        ]\n      ]\n    },\n    "Check Contact Info": {\n      "main": [\n        [\n          {\n            "node": "Generate Follow-up",\n            "type": "main",\n            "index": 0\n          }\n        ]\n      ]\n    },\n    "Generate Follow-up": {\n      "main": [\n        [\n          {\n            "node": "Send Follow-up",\n            "type": "main",\n            "index": 0\n          }\n        ]\n      ]\n    },\n    "Send Follow-up": {\n      "main": [\n        [\n          {\n            "node": "Respond Success",\n            "type": "main",\n            "index": 0\n          }\n        ]\n      ]\n    }\n  },\n  "active": true,\n  "settings": {\n    "executionOrder": "v1"\n  },\n  "versionId": "1",\n  "meta": {\n    "templateCredsSetupCompleted": true\n  },\n  "id": "lead-capture-crm",\n  "tags": [\n    {\n      "createdAt": "2025-09-15T00:00:00.000Z",\n      "updatedAt": "2025-09-15T00:00:00.000Z",\n      "id": "leads",\n      "name": "leads"\n    },\n    {\n      "createdAt": "2025-09-15T00:00:00.000Z",\n      "updatedAt": "2025-09-15T00:00:00.000Z",\n      "id": "crm",\n      "name": "crm"\n    }\n  ]\n}

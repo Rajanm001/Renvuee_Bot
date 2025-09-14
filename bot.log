@@ -114,3 +114,425 @@
 2025-09-15 00:56:51,980 - INFO -    Success rate: 100.0%
 2025-09-15 00:56:51,980 - INFO -    Errors: 10
 2025-09-15 00:56:51,981 - INFO - Production bot stopped
+2025-09-15 00:56:52,855 - __main__ - INFO -    Runtime: 0:04:30.991157
+2025-09-15 00:56:52,855 - __main__ - INFO -    Messages processed: 1
+2025-09-15 00:56:52,855 - __main__ - INFO -    Average response time: 1.02s
+2025-09-15 00:56:52,856 - __main__ - INFO -    Success rate: -3200.0%
+2025-09-15 00:56:52,856 - __main__ - INFO -    Errors: 50
+2025-09-15 00:56:52,856 - __main__ - INFO -    Cache size: 1
+2025-09-15 00:56:56,772 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:57:02,507 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:57:11,233 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:57:18,629 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:57:22,861 - __main__ - INFO -    Runtime: 0:05:00.997353
+2025-09-15 00:57:22,861 - __main__ - INFO -    Messages processed: 3
+2025-09-15 00:57:22,861 - __main__ - INFO -    Average response time: 1.06s
+2025-09-15 00:57:22,862 - __main__ - INFO -    Success rate: -1666.7%
+2025-09-15 00:57:22,862 - __main__ - INFO -    Errors: 54
+2025-09-15 00:57:22,862 - __main__ - INFO -    Cache size: 2
+2025-09-15 00:57:24,245 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:57:29,845 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:57:35,385 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:57:41,086 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:57:46,650 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:57:52,430 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:57:52,872 - __main__ - INFO -    Runtime: 0:05:31.004087
+2025-09-15 00:57:52,873 - __main__ - INFO -    Messages processed: 3
+2025-09-15 00:57:52,873 - __main__ - INFO -    Average response time: 1.06s
+2025-09-15 00:57:52,873 - __main__ - INFO -    Success rate: -1666.7%
+2025-09-15 00:57:52,873 - __main__ - INFO -    Errors: 60
+2025-09-15 00:57:52,874 - __main__ - INFO -    Cache size: 2
+2025-09-15 00:57:58,114 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:58:03,791 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:58:09,374 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:58:15,086 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:58:20,753 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:58:22,879 - __main__ - INFO -    Runtime: 0:06:01.015226
+2025-09-15 00:58:22,883 - __main__ - INFO -    Messages processed: 3
+2025-09-15 00:58:22,883 - __main__ - INFO -    Average response time: 1.06s
+2025-09-15 00:58:22,884 - __main__ - INFO -    Success rate: -1666.7%
+2025-09-15 00:58:22,885 - __main__ - INFO -    Errors: 65
+2025-09-15 00:58:22,885 - __main__ - INFO -    Cache size: 2
+2025-09-15 00:58:29,434 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:58:35,090 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:58:40,766 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:58:46,443 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:58:52,890 - __main__ - INFO -    Runtime: 0:06:31.026127
+2025-09-15 00:58:52,890 - __main__ - INFO -    Messages processed: 3
+2025-09-15 00:58:52,891 - __main__ - INFO -    Average response time: 1.06s
+2025-09-15 00:58:52,891 - __main__ - INFO -    Success rate: -1666.7%
+2025-09-15 00:58:52,892 - __main__ - INFO -    Errors: 69
+2025-09-15 00:58:52,893 - __main__ - INFO -    Cache size: 2
+2025-09-15 00:58:57,295 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:59:04,144 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:59:09,663 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:59:15,143 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:59:20,760 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:59:22,906 - __main__ - INFO -    Runtime: 0:07:01.034668
+2025-09-15 00:59:22,907 - __main__ - INFO -    Messages processed: 3
+2025-09-15 00:59:22,907 - __main__ - INFO -    Average response time: 1.06s
+2025-09-15 00:59:22,908 - __main__ - INFO -    Success rate: -1666.7%
+2025-09-15 00:59:22,908 - __main__ - INFO -    Errors: 74
+2025-09-15 00:59:22,910 - __main__ - INFO -    Cache size: 2
+2025-09-15 00:59:26,481 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:59:32,323 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:59:37,841 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:59:43,446 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:59:52,923 - __main__ - INFO -    Runtime: 0:07:31.052277
+2025-09-15 00:59:52,924 - __main__ - INFO -    Messages processed: 4
+2025-09-15 00:59:52,925 - __main__ - INFO -    Average response time: 1.12s
+2025-09-15 00:59:52,927 - __main__ - INFO -    Success rate: -1850.0%
+2025-09-15 00:59:52,929 - __main__ - INFO -    Errors: 78
+2025-09-15 00:59:52,930 - __main__ - INFO -    Cache size: 2
+2025-09-15 00:59:55,856 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:00:01,571 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:00:07,388 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:00:12,878 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:00:18,527 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:00:22,933 - __main__ - INFO -    Runtime: 0:08:01.070812
+2025-09-15 01:00:22,933 - __main__ - INFO -    Messages processed: 4
+2025-09-15 01:00:22,933 - __main__ - INFO -    Average response time: 1.12s
+2025-09-15 01:00:22,933 - __main__ - INFO -    Success rate: -1850.0%
+2025-09-15 01:00:22,934 - __main__ - INFO -    Errors: 83
+2025-09-15 01:00:22,934 - __main__ - INFO -    Cache size: 2
+2025-09-15 01:00:29,358 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:00:35,048 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:00:40,820 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:00:46,554 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:00:52,177 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:00:52,939 - __main__ - INFO -    Runtime: 0:08:31.074673
+2025-09-15 01:00:52,939 - __main__ - INFO -    Messages processed: 5
+2025-09-15 01:00:52,940 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:00:52,940 - __main__ - INFO -    Success rate: -1560.0%
+2025-09-15 01:00:52,940 - __main__ - INFO -    Errors: 88
+2025-09-15 01:00:52,941 - __main__ - INFO -    Cache size: 3
+2025-09-15 01:00:57,721 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:01:03,279 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:01:12,086 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:01:17,861 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:01:22,953 - __main__ - INFO -    Runtime: 0:09:01.084118
+2025-09-15 01:01:22,954 - __main__ - INFO -    Messages processed: 5
+2025-09-15 01:01:22,954 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:01:22,954 - __main__ - INFO -    Success rate: -1560.0%
+2025-09-15 01:01:22,954 - __main__ - INFO -    Errors: 92
+2025-09-15 01:01:22,955 - __main__ - INFO -    Cache size: 3
+2025-09-15 01:01:23,496 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:01:29,246 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:01:34,984 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:01:41,605 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:01:47,282 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:01:52,962 - __main__ - INFO -    Runtime: 0:09:31.097453
+2025-09-15 01:01:52,963 - __main__ - INFO -    Messages processed: 5
+2025-09-15 01:01:52,963 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:01:52,963 - __main__ - INFO -    Success rate: -1560.0%
+2025-09-15 01:01:52,964 - __main__ - INFO -    Errors: 97
+2025-09-15 01:01:52,966 - __main__ - INFO -    Cache size: 3
+2025-09-15 01:01:57,686 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:02:03,109 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:02:08,782 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:02:14,513 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:02:20,240 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:02:22,981 - __main__ - INFO -    Runtime: 0:10:01.108227
+2025-09-15 01:02:22,981 - __main__ - INFO -    Messages processed: 5
+2025-09-15 01:02:22,982 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:02:22,982 - __main__ - INFO -    Success rate: -1560.0%
+2025-09-15 01:02:22,982 - __main__ - INFO -    Errors: 102
+2025-09-15 01:02:22,983 - __main__ - INFO -    Cache size: 3
+2025-09-15 01:02:25,979 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:02:31,483 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:02:37,136 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:02:42,873 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:02:48,607 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:02:52,993 - __main__ - INFO -    Runtime: 0:10:31.125582
+2025-09-15 01:02:52,998 - __main__ - INFO -    Messages processed: 5
+2025-09-15 01:02:52,999 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:02:52,999 - __main__ - INFO -    Success rate: -1560.0%
+2025-09-15 01:02:52,999 - __main__ - INFO -    Errors: 107
+2025-09-15 01:02:52,999 - __main__ - INFO -    Cache size: 3
+2025-09-15 01:02:54,338 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:03:00,082 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:03:05,600 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:03:16,660 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:03:22,309 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:03:23,007 - __main__ - INFO -    Runtime: 0:11:01.140200
+2025-09-15 01:03:23,008 - __main__ - INFO -    Messages processed: 5
+2025-09-15 01:03:23,009 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:03:23,009 - __main__ - INFO -    Success rate: -1560.0%
+2025-09-15 01:03:23,010 - __main__ - INFO -    Errors: 112
+2025-09-15 01:03:23,010 - __main__ - INFO -    Cache size: 3
+2025-09-15 01:03:27,901 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:03:33,517 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:03:39,220 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:03:45,092 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:03:53,017 - __main__ - INFO -    Runtime: 0:11:31.151171
+2025-09-15 01:03:53,017 - __main__ - INFO -    Messages processed: 5
+2025-09-15 01:03:53,022 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:03:53,022 - __main__ - INFO -    Success rate: -1560.0%
+2025-09-15 01:03:53,023 - __main__ - INFO -    Errors: 116
+2025-09-15 01:03:53,023 - __main__ - INFO -    Cache size: 3
+2025-09-15 01:03:59,123 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:04:04,777 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:04:10,421 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:04:16,142 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:04:21,828 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:04:23,031 - __main__ - INFO -    Runtime: 0:12:01.164550
+2025-09-15 01:04:23,031 - __main__ - INFO -    Messages processed: 5
+2025-09-15 01:04:23,032 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:04:23,035 - __main__ - INFO -    Success rate: -1560.0%
+2025-09-15 01:04:23,036 - __main__ - INFO -    Errors: 121
+2025-09-15 01:04:23,037 - __main__ - INFO -    Cache size: 3
+2025-09-15 01:04:27,534 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:04:33,145 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:04:38,685 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:04:44,437 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:04:50,051 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:04:53,045 - __main__ - INFO -    Runtime: 0:12:31.178020
+2025-09-15 01:04:53,045 - __main__ - INFO -    Messages processed: 5
+2025-09-15 01:04:53,046 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:04:53,046 - __main__ - INFO -    Success rate: -1560.0%
+2025-09-15 01:04:53,046 - __main__ - INFO -    Errors: 126
+2025-09-15 01:04:53,046 - __main__ - INFO -    Cache size: 3
+2025-09-15 01:04:55,795 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:05:06,180 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:05:16,795 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:05:22,278 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:05:23,056 - __main__ - INFO -    Runtime: 0:13:01.188547
+2025-09-15 01:05:23,056 - __main__ - INFO -    Messages processed: 5
+2025-09-15 01:05:23,057 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:05:23,058 - __main__ - INFO -    Success rate: -1560.0%
+2025-09-15 01:05:23,058 - __main__ - INFO -    Errors: 130
+2025-09-15 01:05:23,059 - __main__ - INFO -    Cache size: 3
+2025-09-15 01:05:27,815 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:05:37,288 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:05:42,827 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:05:48,496 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:05:53,091 - __main__ - INFO -    Runtime: 0:13:31.202087
+2025-09-15 01:05:53,092 - __main__ - INFO -    Messages processed: 5
+2025-09-15 01:05:53,092 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:05:53,092 - __main__ - INFO -    Success rate: -1560.0%
+2025-09-15 01:05:53,093 - __main__ - INFO -    Errors: 134
+2025-09-15 01:05:53,093 - __main__ - INFO -    Cache size: 3
+2025-09-15 01:05:54,014 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:05:59,593 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:06:05,262 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:06:12,661 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:06:21,407 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:06:23,099 - __main__ - INFO -    Runtime: 0:14:01.234374
+2025-09-15 01:06:23,100 - __main__ - INFO -    Messages processed: 6
+2025-09-15 01:06:23,101 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:06:23,101 - __main__ - INFO -    Success rate: -2183.3%
+2025-09-15 01:06:23,101 - __main__ - INFO -    Errors: 139
+2025-09-15 01:06:23,102 - __main__ - INFO -    Cache size: 4
+2025-09-15 01:06:27,029 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:06:32,542 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:06:39,391 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:06:44,908 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:06:50,547 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:06:53,105 - __main__ - INFO -    Runtime: 0:14:31.242728
+2025-09-15 01:06:53,105 - __main__ - INFO -    Messages processed: 6
+2025-09-15 01:06:53,105 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:06:53,105 - __main__ - INFO -    Success rate: -2183.3%
+2025-09-15 01:06:53,106 - __main__ - INFO -    Errors: 144
+2025-09-15 01:06:53,106 - __main__ - INFO -    Cache size: 4
+2025-09-15 01:06:56,067 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:07:01,536 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:07:07,169 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:07:12,720 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:07:18,254 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:07:23,109 - __main__ - INFO -    Runtime: 0:15:01.246557
+2025-09-15 01:07:23,110 - __main__ - INFO -    Messages processed: 6
+2025-09-15 01:07:23,110 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:07:23,110 - __main__ - INFO -    Success rate: -2183.3%
+2025-09-15 01:07:23,111 - __main__ - INFO -    Errors: 149
+2025-09-15 01:07:23,111 - __main__ - INFO -    Cache size: 4
+2025-09-15 01:07:24,085 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:07:29,656 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:07:35,237 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:07:41,001 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:07:46,762 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:07:53,119 - __main__ - INFO -    Runtime: 0:15:31.251743
+2025-09-15 01:07:53,119 - __main__ - INFO -    Messages processed: 6
+2025-09-15 01:07:53,120 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:07:53,120 - __main__ - INFO -    Success rate: -2183.3%
+2025-09-15 01:07:53,121 - __main__ - INFO -    Errors: 154
+2025-09-15 01:07:53,121 - __main__ - INFO -    Cache size: 4
+2025-09-15 01:07:57,537 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:08:03,299 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:08:09,036 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:08:14,614 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:08:20,345 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:08:23,127 - __main__ - INFO -    Runtime: 0:16:01.262266
+2025-09-15 01:08:23,127 - __main__ - INFO -    Messages processed: 6
+2025-09-15 01:08:23,127 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:08:23,128 - __main__ - INFO -    Success rate: -2183.3%
+2025-09-15 01:08:23,128 - __main__ - INFO -    Errors: 159
+2025-09-15 01:08:23,128 - __main__ - INFO -    Cache size: 4
+2025-09-15 01:08:26,329 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:08:31,985 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:08:37,618 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:08:43,249 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:08:49,286 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:08:53,135 - __main__ - INFO -    Runtime: 0:16:31.269422
+2025-09-15 01:08:53,136 - __main__ - INFO -    Messages processed: 6
+2025-09-15 01:08:53,136 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:08:53,137 - __main__ - INFO -    Success rate: -2183.3%
+2025-09-15 01:08:53,137 - __main__ - INFO -    Errors: 164
+2025-09-15 01:08:53,138 - __main__ - INFO -    Cache size: 4
+2025-09-15 01:08:55,003 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:09:03,972 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:09:09,598 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:09:15,254 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:09:20,923 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:09:23,146 - __main__ - INFO -    Runtime: 0:17:01.280949
+2025-09-15 01:09:23,147 - __main__ - INFO -    Messages processed: 6
+2025-09-15 01:09:23,147 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:09:23,148 - __main__ - INFO -    Success rate: -2183.3%
+2025-09-15 01:09:23,148 - __main__ - INFO -    Errors: 169
+2025-09-15 01:09:23,149 - __main__ - INFO -    Cache size: 4
+2025-09-15 01:09:26,599 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:09:32,251 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:09:37,755 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:09:43,447 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:09:48,971 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:09:53,155 - __main__ - INFO -    Runtime: 0:17:31.289723
+2025-09-15 01:09:53,156 - __main__ - INFO -    Messages processed: 6
+2025-09-15 01:09:53,156 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:09:53,157 - __main__ - INFO -    Success rate: -2183.3%
+2025-09-15 01:09:53,157 - __main__ - INFO -    Errors: 174
+2025-09-15 01:09:53,157 - __main__ - INFO -    Cache size: 4
+2025-09-15 01:09:59,722 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:10:05,537 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:10:12,883 - INFO - 🚀 Running performance benchmark...
+2025-09-15 01:10:12,883 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,889 - INFO - 📊 Performance Benchmark Results:
+2025-09-15 01:10:12,889 - INFO -    🔄 Iterations: 1000
+2025-09-15 01:10:12,889 - INFO -    ⏱️  Total time: 0.00s
+2025-09-15 01:10:12,889 - INFO -    ⚡ Average response time: 0.00ms
+2025-09-15 01:10:12,890 - INFO -    🎯 Responses per second: 203331
+2025-09-15 01:10:12,890 - INFO - ✅ Performance benchmark passed!
+2025-09-15 01:10:12,890 - INFO - 📋 Generating test report...
+2025-09-15 01:10:12,891 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,891 - INFO - 🧪 Test environment initialized
+2025-09-15 01:10:12,892 - INFO - Testing bot initialization...
+2025-09-15 01:10:12,892 - INFO - ✅ Bot initialization test passed
+2025-09-15 01:10:12,892 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,892 - INFO - 🧪 Test environment initialized
+2025-09-15 01:10:12,893 - INFO - Testing user session management...
+2025-09-15 01:10:12,893 - INFO - ✅ User session management test passed
+2025-09-15 01:10:12,893 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,893 - INFO - 🧪 Test environment initialized
+2025-09-15 01:10:12,893 - INFO - Testing intent classification...
+2025-09-15 01:10:12,894 - INFO - ✅ Intent classification test passed
+2025-09-15 01:10:12,895 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,895 - INFO - 🧪 Test environment initialized
+2025-09-15 01:10:12,895 - INFO - Testing keyboard generation...
+2025-09-15 01:10:12,896 - INFO - ✅ Keyboard generation test passed
+2025-09-15 01:10:12,896 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,896 - INFO - 🧪 Test environment initialized
+2025-09-15 01:10:12,896 - INFO - Testing smart response generation...
+2025-09-15 01:10:12,898 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,898 - INFO - 🧪 Test environment initialized
+2025-09-15 01:10:12,898 - INFO - Testing message processing workflow...
+2025-09-15 01:10:12,899 - INFO - 📨 Message from @testuser: Hello there!
+2025-09-15 01:10:12,899 - INFO - 🎯 Intent: greeting (confidence: 0.30)
+2025-09-15 01:10:12,899 - INFO - ✅ Smart response sent in 0.00s
+2025-09-15 01:10:12,900 - INFO - 📨 Message from @testuser: I want to see a demo
+2025-09-15 01:10:12,900 - INFO - 🎯 Intent: demo_request (confidence: 0.30)
+2025-09-15 01:10:12,900 - INFO - ✅ Smart response sent in 0.00s
+2025-09-15 01:10:12,900 - INFO - 📨 Message from @testuser: What are your prices?
+2025-09-15 01:10:12,900 - INFO - 🎯 Intent: general_inquiry (confidence: 0.30)
+2025-09-15 01:10:12,900 - INFO - ✅ Smart response sent in 0.00s
+2025-09-15 01:10:12,901 - INFO - 📨 Message from @testuser: I need support
+2025-09-15 01:10:12,901 - INFO - 🎯 Intent: support_request (confidence: 0.30)
+2025-09-15 01:10:12,901 - INFO - ✅ Smart response sent in 0.00s
+2025-09-15 01:10:12,901 - INFO - 📨 Message from @testuser: Tell me about features
+2025-09-15 01:10:12,902 - INFO - 🎯 Intent: feature_question (confidence: 0.30)
+2025-09-15 01:10:12,902 - INFO - ✅ Smart response sent in 0.00s
+2025-09-15 01:10:12,903 - INFO - ✅ Message processing workflow test passed
+2025-09-15 01:10:12,904 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,904 - INFO - 🧪 Test environment initialized
+2025-09-15 01:10:12,905 - INFO - Testing callback query handling...
+2025-09-15 01:10:12,905 - INFO - ✅ Callback query handling test passed
+2025-09-15 01:10:12,906 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,906 - INFO - 🧪 Test environment initialized
+2025-09-15 01:10:12,906 - INFO - Testing metrics tracking...
+2025-09-15 01:10:12,907 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,908 - INFO - 🧪 Test environment initialized
+2025-09-15 01:10:12,908 - INFO - Testing error handling...
+2025-09-15 01:10:12,911 - ERROR - ❌ Error processing message: 'chat'
+2025-09-15 01:10:12,911 - ERROR - ❌ Failed to send message to chat 12345
+2025-09-15 01:10:12,911 - INFO - ✅ Error handling test passed
+2025-09-15 01:10:12,912 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,912 - INFO - 🧪 Test environment initialized
+2025-09-15 01:10:12,912 - INFO - Testing performance requirements...
+2025-09-15 01:10:12,914 - INFO - ✅ Performance requirements test passed
+2025-09-15 01:10:12,915 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,915 - INFO - 🧪 Test environment initialized
+2025-09-15 01:10:12,915 - INFO - Testing edge cases...
+2025-09-15 01:10:12,916 - INFO - ✅ Edge cases test passed
+2025-09-15 01:10:12,916 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,916 - INFO - 🧪 Test environment initialized
+2025-09-15 01:10:12,917 - INFO - Testing knowledge base accuracy...
+2025-09-15 01:10:12,917 - INFO - ✅ Knowledge base accuracy test passed
+2025-09-15 01:10:12,920 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:12,920 - INFO - 🔗 Integration test environment initialized
+2025-09-15 01:10:12,920 - INFO - Testing complete conversation flow...
+2025-09-15 01:10:12,921 - INFO - 📨 Message from @testuser: Hello
+2025-09-15 01:10:12,921 - INFO - 🎯 Intent: greeting (confidence: 0.30)
+2025-09-15 01:10:12,921 - INFO - ✅ Smart response sent in 0.00s
+2025-09-15 01:10:12,921 - INFO - 📨 Message from @testuser: I want to see pricing
+2025-09-15 01:10:12,922 - INFO - 🎯 Intent: pricing_inquiry (confidence: 0.30)
+2025-09-15 01:10:12,922 - INFO - ✅ Smart response sent in 0.00s
+2025-09-15 01:10:12,923 - INFO - 📨 Message from @testuser: Show me a demo
+2025-09-15 01:10:12,923 - INFO - 🎯 Intent: demo_request (confidence: 0.60)
+2025-09-15 01:10:12,923 - INFO - ✅ Smart response sent in 0.00s
+2025-09-15 01:10:12,923 - INFO - 📨 Message from @testuser: I'm interested in the enterprise plan
+2025-09-15 01:10:12,923 - INFO - 🎯 Intent: demo_request (confidence: 0.50)
+2025-09-15 01:10:12,924 - INFO - ✅ Smart response sent in 0.00s
+2025-09-15 01:10:12,924 - INFO - ✅ Complete conversation flow test passed
+2025-09-15 01:10:12,926 - INFO - 📊 Test Report Generated:
+2025-09-15 01:10:12,926 - INFO -    ✅ Tests run: 13
+2025-09-15 01:10:12,927 - INFO -    ❌ Failures: 2
+2025-09-15 01:10:12,927 - INFO -    💥 Errors: 0
+2025-09-15 01:10:12,927 - INFO -    📈 Success rate: 84.6%
+2025-09-15 01:10:12,927 - INFO -    🎯 Status: FAILED
+2025-09-15 01:10:14,454 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:10:20,299 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:10:22,086 - INFO - 🤖 Ultimate Telegram Bot initialized with enhanced features
+2025-09-15 01:10:23,013 - INFO - 🤖 Ultimate Bot connected: @Renvuee_Bot (ID: 8336045140)
+2025-09-15 01:10:23,014 - INFO - 🚀 Starting ULTIMATE Telegram Revenue Copilot...
+2025-09-15 01:10:23,015 - INFO - 🤖 Enhanced with smart menus, context awareness, and interactive features!
+2025-09-15 01:10:23,015 - INFO - 💬 Chat with @Renvuee_Bot to experience the magic!
+2025-09-15 01:10:23,015 - INFO - 🛑 Press Ctrl+C to stop
+2025-09-15 01:10:23,162 - __main__ - INFO -    Runtime: 0:18:01.298390
+2025-09-15 01:10:23,163 - __main__ - INFO -    Messages processed: 6
+2025-09-15 01:10:23,163 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:10:23,163 - __main__ - INFO -    Success rate: -2183.3%
+2025-09-15 01:10:23,164 - __main__ - INFO -    Errors: 178
+2025-09-15 01:10:23,164 - __main__ - INFO -    Cache size: 4
+2025-09-15 01:10:28,987 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:10:34,803 - ERROR - Request failed: The read operation timed out
+2025-09-15 01:10:35,835 - __main__ - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 01:10:39,531 - ERROR - Request failed: The read operation timed out
+2025-09-15 01:10:40,430 - __main__ - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 01:10:46,186 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:10:53,068 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:10:53,173 - __main__ - INFO -    Runtime: 0:18:31.306160
+2025-09-15 01:10:53,174 - __main__ - INFO -    Messages processed: 6
+2025-09-15 01:10:53,174 - __main__ - INFO -    Average response time: 1.10s
+2025-09-15 01:10:53,174 - __main__ - INFO -    Success rate: -2183.3%
+2025-09-15 01:10:53,175 - __main__ - INFO -    Errors: 183
+2025-09-15 01:10:53,175 - __main__ - INFO -    Cache size: 4
+2025-09-15 01:10:56,763 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:11:00,399 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 01:11:03,596 - INFO - 🛑 Received shutdown signal
+2025-09-15 01:11:03,598 - INFO - 🤖 ULTIMATE BOT PERFORMANCE:
+2025-09-15 01:11:03,598 - INFO -    ⏱️  Uptime: 0:00:41.511484
+2025-09-15 01:11:03,599 - INFO -    👥 Total users: 0
+2025-09-15 01:11:03,599 - INFO -    💬 Messages: 0
+2025-09-15 01:11:03,603 - INFO -    🎯 Leads captured: 0
+2025-09-15 01:11:03,603 - INFO -    🎬 Demos scheduled: 0
+2025-09-15 01:11:03,604 - INFO -    ⚡ Avg response: 0.00s
+2025-09-15 01:11:03,604 - INFO -    ✅ Success rate: 100.0%
+2025-09-15 01:11:03,605 - INFO -    ❌ Errors: 2
+2025-09-15 01:11:03,605 - INFO - 👋 Ultimate Bot stopped

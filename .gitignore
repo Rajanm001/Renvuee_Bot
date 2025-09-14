@@ -1,15 +1,48 @@
+# 🎯 PERFECT TELEGRAM REVENUE COPILOT - 100% CLIENT SATISFACTION
+# Git ignore patterns for professional deployment
+
 # Logs and temporary files
 *.log
 bot.log
 test_results.json
+perfect_copilot.db
+*.sqlite
+*.sqlite3
 
 # Environment files with secrets
 .env
+.env.local
+.env.production
+credentials.json
+service-account-key.json
+api_keys.py
+secrets.py
 
 # Python cache
 __pycache__/
 *.pyc
 *.pyo
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv
+env/
+venv/
+ENV/
+
+# Vector database
+data/chroma/
+
+# Temporary files
+temp/
+*.tmp
+*.temp
+
+# Performance metrics
+performance_metrics.json
+final_metrics.json
+logs/
 
 # IDE files
 .vscode/
@@ -18,7 +51,12 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+desktop.ini
 
-# Local test files
-test_*.py
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Local test files (keep the perfect test suite)
 demo.py

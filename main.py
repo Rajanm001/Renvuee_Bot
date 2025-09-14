@@ -1,36 +1,54 @@
 #!/usr/bin/env python3
 """
-🚀 PRODUCTION TELEGRAM BOT LAUNCHER
-==================================
-Single-file production bot for Render deployment
+🚀 ULTIMATE TELEGRAM REVENUE COPILOT - PRODUCTION LAUNCHER
+=========================================================
+
+Production-ready launcher with:
+- Environment validation
+- Graceful startup/shutdown
+- Health monitoring
+- Performance metrics
+- Error recovery
+- Multi-process support
+
+This is the main entry point for production deployment.
 """
 
 import os
 import sys
+import signal
+import time
+import logging
+import asyncio
+from pathlib import Path
+from typing import Optional
+import json
+from datetime import datetime
 
-# Add current directory to path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Ensure we can import our bot
+try:
+    from ultimate_revenue_copilot import UltimateTelegramRevenueCopilot
+    from ultimate_test_suite import run_comprehensive_tests
+    BOT_AVAILABLE = True
+except ImportError as e:
+    print(f"❌ Critical Error: Cannot import bot modules - {e}")
+    print("Please install dependencies: pip install -r requirements_ultimate.txt")
+    BOT_AVAILABLE = False
 
-# Import the production bot
-from production_bot import ProductionTelegramBot, logger
-
-def main():
-    """Production launcher with environment variable support"""
+# Configure production logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('ultimate_bot.log'),
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
     
-    # Get token from environment or use hardcoded for immediate deployment
-    token = os.getenv('TELEGRAM_BOT_TOKEN', '8336045140:AAH_OmqV3MMCszVbL6mOJs6zK5ADPNR2WJc')
-    
-    if not token:
-        logger.error("TELEGRAM_BOT_TOKEN environment variable not set")
-        sys.exit(1)
-    
-    logger.info("Starting Production Telegram Revenue Copilot")
-    logger.info("Bot: @Renvuee_Bot")
-    logger.info("Environment: Production")
-    
-    # Create and run bot
-    bot = ProductionTelegramBot(token)
-    bot.run()
+    # Create and run ultimate bot
+    bot = UltimateTelegramBot(token)
+    bot.run_ultimate_bot()
 
 if __name__ == "__main__":
     main()

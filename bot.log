@@ -1,0 +1,55 @@
+2025-09-15 00:52:28,332 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:52:34,109 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:52:39,584 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:52:45,425 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:52:51,012 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:52:56,609 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:53:02,342 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:53:07,958 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:53:13,593 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:53:19,204 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:53:24,812 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:53:30,392 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:53:39,554 - INFO - Production TelegramBot initialized
+2025-09-15 00:53:40,747 - INFO - Bot connected: @Renvuee_Bot (ID: 8336045140)
+2025-09-15 00:53:40,748 - INFO - Starting Production Telegram bot...
+2025-09-15 00:53:40,749 - INFO - Bot @Renvuee_Bot is now listening for messages!
+2025-09-15 00:53:40,749 - INFO - Press Ctrl+C to stop
+2025-09-15 00:53:41,158 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:53:42,249 - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:53:44,859 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:53:45,881 - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:53:48,608 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:53:49,583 - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:53:52,311 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:53:53,267 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:53:56,058 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:53:56,964 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:53:59,821 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:54:00,603 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:54:03,447 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:54:04,216 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:54:07,188 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:54:07,827 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:54:10,792 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:54:11,611 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:54:14,474 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:54:15,208 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:54:18,183 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:54:18,845 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:54:21,825 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:54:22,472 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:54:23,502 - __main__ - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:54:26,177 - INFO - Received shutdown signal
+2025-09-15 00:54:26,178 - INFO - PERFORMANCE METRICS:
+2025-09-15 00:54:26,179 - INFO -    Runtime: 0:00:46.624616
+2025-09-15 00:54:26,179 - INFO -    Messages processed: 0
+2025-09-15 00:54:26,180 - INFO -    Average response time: 0.00s
+2025-09-15 00:54:26,180 - INFO -    Success rate: 100.0%
+2025-09-15 00:54:26,181 - INFO -    Errors: 12
+2025-09-15 00:54:26,181 - INFO - Production bot stopped
+2025-09-15 00:54:27,190 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:54:32,842 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:54:38,344 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:54:47,336 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:54:52,891 - __main__ - ERROR - Unexpected error: The read operation timed out

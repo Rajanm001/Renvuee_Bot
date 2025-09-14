@@ -1,0 +1,6 @@
+# Production Requirements for Telegram Revenue Copilot
+# Ultra-fast, production-ready bot with minimal dependencies
+
+# Core requirements - no external APIs needed
+requests>=2.31.0
+urllib3>=2.0.4

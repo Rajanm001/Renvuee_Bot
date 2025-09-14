@@ -62,3 +62,55 @@
 2025-09-15 00:55:22,836 - __main__ - INFO -    Success rate: -3200.0%
 2025-09-15 00:55:22,836 - __main__ - INFO -    Errors: 33
 2025-09-15 00:55:22,836 - __main__ - INFO -    Cache size: 1
+2025-09-15 00:55:31,192 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:55:36,993 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:55:42,517 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:55:48,034 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:55:52,841 - __main__ - INFO -    Runtime: 0:03:30.977110
+2025-09-15 00:55:52,841 - __main__ - INFO -    Messages processed: 1
+2025-09-15 00:55:52,841 - __main__ - INFO -    Average response time: 1.02s
+2025-09-15 00:55:52,842 - __main__ - INFO -    Success rate: -3200.0%
+2025-09-15 00:55:52,842 - __main__ - INFO -    Errors: 37
+2025-09-15 00:55:52,842 - __main__ - INFO -    Cache size: 1
+2025-09-15 00:55:53,678 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:55:56,687 - INFO - Production TelegramBot initialized
+2025-09-15 00:55:57,545 - INFO - Bot connected: @Renvuee_Bot (ID: 8336045140)
+2025-09-15 00:55:57,547 - INFO - Starting Production Telegram bot...
+2025-09-15 00:55:57,548 - INFO - Bot @Renvuee_Bot is now listening for messages!
+2025-09-15 00:55:57,549 - INFO - Press Ctrl+C to stop
+2025-09-15 00:55:58,518 - __main__ - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:56:01,253 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:56:02,296 - __main__ - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:56:06,075 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:56:07,289 - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:56:10,941 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:56:11,917 - __main__ - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:56:14,657 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:56:15,637 - __main__ - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:56:18,381 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:56:19,210 - __main__ - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:56:21,988 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:56:22,848 - __main__ - INFO -    Runtime: 0:04:00.983098
+2025-09-15 00:56:22,848 - __main__ - INFO -    Messages processed: 1
+2025-09-15 00:56:22,849 - __main__ - INFO -    Average response time: 1.02s
+2025-09-15 00:56:22,849 - __main__ - INFO -    Success rate: -3200.0%
+2025-09-15 00:56:22,849 - __main__ - INFO -    Errors: 44
+2025-09-15 00:56:22,850 - __main__ - INFO -    Cache size: 1
+2025-09-15 00:56:22,982 - __main__ - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:56:27,884 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:56:28,743 - __main__ - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:56:32,559 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:56:34,644 - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:56:37,441 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:56:38,358 - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:56:42,241 - __main__ - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:56:47,098 - ERROR - Request failed: The read operation timed out
+2025-09-15 00:56:48,024 - __main__ - ERROR - Request failed: HTTP Error 409: Conflict
+2025-09-15 00:56:51,978 - INFO - Received shutdown signal
+2025-09-15 00:56:51,979 - INFO - PERFORMANCE METRICS:
+2025-09-15 00:56:51,979 - INFO -    Runtime: 0:00:55.291659
+2025-09-15 00:56:51,979 - INFO -    Messages processed: 0
+2025-09-15 00:56:51,980 - INFO -    Average response time: 0.00s
+2025-09-15 00:56:51,980 - INFO -    Success rate: 100.0%
+2025-09-15 00:56:51,980 - INFO -    Errors: 10
+2025-09-15 00:56:51,981 - INFO - Production bot stopped

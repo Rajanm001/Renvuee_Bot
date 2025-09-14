@@ -53,3 +53,12 @@
 2025-09-15 00:54:38,344 - __main__ - ERROR - Unexpected error: The read operation timed out
 2025-09-15 00:54:47,336 - __main__ - ERROR - Unexpected error: The read operation timed out
 2025-09-15 00:54:52,891 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:54:58,432 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:55:07,090 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:55:12,712 - __main__ - ERROR - Unexpected error: The read operation timed out
+2025-09-15 00:55:22,834 - __main__ - INFO -    Runtime: 0:03:00.967008
+2025-09-15 00:55:22,835 - __main__ - INFO -    Messages processed: 1
+2025-09-15 00:55:22,835 - __main__ - INFO -    Average response time: 1.02s
+2025-09-15 00:55:22,836 - __main__ - INFO -    Success rate: -3200.0%
+2025-09-15 00:55:22,836 - __main__ - INFO -    Errors: 33
+2025-09-15 00:55:22,836 - __main__ - INFO -    Cache size: 1

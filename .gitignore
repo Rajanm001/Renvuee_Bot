@@ -1,0 +1,24 @@
+# Logs and temporary files
+*.log
+bot.log
+test_results.json
+
+# Environment files with secrets
+.env
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local test files
+test_*.py
+demo.py
